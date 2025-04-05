@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import HeroSection from "../Components/HeroSection";
 import Footer from "../Components/Footer";
+import WhyEdu from "../Components/WhyEdu";
+import OurMission from "../Components/OurMission";
+import Review from "../Components/Review";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -18,6 +21,9 @@ const Home = () => {
   return (
     <>
       <HeroSection />
+      <WhyEdu/>
+      <OurMission />
+      <Review />
       <Footer />
     </>
   );

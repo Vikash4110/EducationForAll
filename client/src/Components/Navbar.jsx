@@ -245,16 +245,16 @@ const Navbar = () => {
             ) : (
               <>
                 <Link
-                  to="/login"
+                  to="/teacher-login"
                   className="hidden lg:flex items-center px-4 py-2 rounded-md font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors"
                 >
-                  <FaUser className="mr-2" /> Login
+                  <FaUser className="mr-2" /> Teacher Login
                 </Link>
                 <Link
-                  to="/register"
+                  to="/teacher-register"
                   className="hidden lg:flex items-center px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-md font-medium hover:from-blue-700 hover:to-indigo-700 transition-all shadow-md hover:shadow-lg"
                 >
-                  <FaChalkboardTeacher className="mr-2" /> Register
+                  <FaChalkboardTeacher className="mr-2" /> Teacher Register
                 </Link>
               </>
             )}
@@ -395,14 +395,14 @@ const Navbar = () => {
                       className="px-4 py-3 rounded-md font-medium flex items-center justify-center bg-blue-50 text-blue-600 hover:bg-blue-100"
                       onClick={() => setIsOpen(false)}
                     >
-                      <FaUser className="mr-2" /> Login
+                      <FaUser className="mr-2" /> Teacher Login
                     </Link>
                     <Link
                       to="/teacher-register"
                       className="px-4 py-3 rounded-md font-medium flex items-center justify-center bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700"
                       onClick={() => setIsOpen(false)}
                     >
-                      <FaChalkboardTeacher className="mr-2" /> Register
+                      <FaChalkboardTeacher className="mr-2" /> Teacher Register
                     </Link>
                   </>
                 )}
