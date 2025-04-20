@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [role, setRole] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [isLoggingOut, setIsLoggingOut] = useState(false); // Define isLoggingOut here
+  const [isLoggingOut, setIsLoggingOut] = useState(false);
   const authorizationToken = `Bearer ${token}`;
 
   const storeTokenInLS = (serverToken) => {
@@ -19,13 +19,13 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logoutUser = () => {
-    setIsLoggingOut(true); // Set flag before logout
+    setIsLoggingOut(true);
     setToken("");
     setUser(null);
     setRole(null);
     localStorage.removeItem("token");
     setIsLoading(false);
-    setTimeout(() => setIsLoggingOut(false), 1000); // Reset after navigation
+    setTimeout(() => setIsLoggingOut(false), 1000);
   };
 
   const getUserRoleFromToken = () => {
@@ -55,6 +55,22 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  const studentAuthentication = async () => {
+    try {
+      const response = await fetch(`${backendUrl}/api/teachers/students/profile`, {
+        method: "GET",
+        headers: { Authorization: authorizationToken },
+      });
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      const data = await response.json();
+      setUser(data);
+      console.log("Authenticated student:", data);
+    } catch (error) {
+      console.error("Student authentication failed:", error.message);
+      setUser(null);
+    }
+  };
+
   useEffect(() => {
     const tokenRole = getUserRoleFromToken();
     setRole(tokenRole);
@@ -70,6 +86,8 @@ export const AuthProvider = ({ children }) => {
       setIsLoading(true);
       if (tokenRole === "teacher") {
         await teacherAuthentication();
+      } else if (tokenRole === "student") {
+        await studentAuthentication();
       } else {
         setUser(null);
       }

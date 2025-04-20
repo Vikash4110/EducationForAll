@@ -9,8 +9,16 @@ const studentSchema = new mongoose.Schema({
     enum: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
   },
   section: { type: String, required: true, enum: ["A", "B", "C", "D"] },
-  profilePicture: { type: mongoose.Schema.Types.ObjectId, ref: "uploads.files" },
+  phoneNumber: { type: String, required: true },
+  email: { type: String, required: true, unique: true, lowercase: true },
+  password: { type: String, required: true },
+  profilePicture: { type: mongoose.Schema.Types.ObjectId, ref: "Uploads.files" },
   teacher: { type: mongoose.Schema.Types.ObjectId, ref: "Teacher", required: true },
+  project: {
+    title: { type: String, default: "" },
+    description: { type: String, default: "" },
+  },
+  submittedPhotos: [{ type: mongoose.Schema.Types.ObjectId, ref: "Uploads.files" }], // New field for submitted photos
 }, { timestamps: true });
 
 module.exports = mongoose.model("Student", studentSchema);

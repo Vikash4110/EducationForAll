@@ -9,6 +9,9 @@ import TeacherLogin from "./Pages/TeacherLogin";
 import TeacherRegister from "./Pages/TeacherRegister";
 import TeacherDashboard from "./Pages/TeacherDashboard";
 import TeacherProfile from "./Pages/TeacherProfile";
+import StudentDashboard from "./Pages/StudentDashboard";
+import StudentLogin from "./Pages/StudentLogin";
+
 import About from "./Pages/About";
 
 function App() {
@@ -40,6 +43,9 @@ function App() {
           <Route path="/teacher-register" element={<TeacherRegister />} />
           <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
           <Route path="/teacher-profile" element={<TeacherProfile />} />
+          <Route path="/student-login" element={<StudentLogin />} />
+          <Route path="/student-dashboard" element={<StudentDashboard />} />
+
           <Route path="/about" element={<About />} />
           {/* 404 ErrorPage */}
           <Route path="*" element={<NotFoundPage />} /> 

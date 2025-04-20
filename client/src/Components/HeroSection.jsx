@@ -152,11 +152,11 @@ const HeroSection = () => {
                 
                 <motion.div variants={buttonVariants}>
                   <Link
-                    to="/teacher-login"
+                    to="/student-login"
                     className="flex items-center justify-center gap-2 bg-white border border-gray-200 hover:border-indigo-300 text-gray-700 hover:text-indigo-700 font-medium py-3 px-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-200"
                   >
                     <FaUserPlus className="text-lg" />
-                    Login as Teacher
+                    Login as Student
                     <FaArrowRight className="text-sm" />
                   </Link>
                 </motion.div>

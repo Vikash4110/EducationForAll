@@ -251,10 +251,10 @@ const Navbar = () => {
                   <FaUser className="mr-2" /> Teacher Login
                 </Link>
                 <Link
-                  to="/teacher-register"
+                  to="/student-login"
                   className="hidden lg:flex items-center px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-md font-medium hover:from-blue-700 hover:to-indigo-700 transition-all shadow-md hover:shadow-lg"
                 >
-                  <FaChalkboardTeacher className="mr-2" /> Teacher Register
+                  <FaChalkboardTeacher className="mr-2" /> Student Login
                 </Link>
               </>
             )}
@@ -398,11 +398,11 @@ const Navbar = () => {
                       <FaUser className="mr-2" /> Teacher Login
                     </Link>
                     <Link
-                      to="/teacher-register"
+                      to="/student-login"
                       className="px-4 py-3 rounded-md font-medium flex items-center justify-center bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700"
                       onClick={() => setIsOpen(false)}
                     >
-                      <FaChalkboardTeacher className="mr-2" /> Teacher Register
+                      <FaChalkboardTeacher className="mr-2" /> Student Login
                     </Link>
                   </>
                 )}
