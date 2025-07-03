@@ -11,7 +11,6 @@ import TeacherDashboard from "./Pages/TeacherDashboard";
 import TeacherProfile from "./Pages/TeacherProfile";
 import StudentDashboard from "./Pages/StudentDashboard";
 import StudentLogin from "./Pages/StudentLogin";
-
 import About from "./Pages/About";
 
 function App() {

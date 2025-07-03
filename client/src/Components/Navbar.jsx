@@ -395,7 +395,7 @@ const Navbar = () => {
                       className="px-4 py-3 rounded-md font-medium flex items-center justify-center bg-blue-50 text-blue-600 hover:bg-blue-100"
                       onClick={() => setIsOpen(false)}
                     >
-                      <FaUser className="mr-2" /> Teacher Login
+                      <FaUser className="mr-2" /> Teacher Login Her
                     </Link>
                     <Link
                       to="/student-login"
