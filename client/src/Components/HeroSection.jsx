@@ -15,7 +15,7 @@ const EducationCarousel = () => {
     },
     {
       quote:
-        "If school is meant to prepare us for life, why does life feel like a separate subject?",
+        "If school is meant to prepare us for life, why does life feel like a separate subject",
       image: Img2,
     },
     {
