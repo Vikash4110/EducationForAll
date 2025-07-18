@@ -5,7 +5,71 @@ const BlogSection = () => {
   const [expandedArticle, setExpandedArticle] = useState(null);
 
   const blogPosts = [
-    // ... (keep your existing blogPosts array)
+    {
+      id: 1,
+      title: "Passion and Interest Exploration Bot",
+      excerpt:
+        "Our model guides kids through a cycle of doing and reflecting rather than asking traditional career questions...",
+      content: `Whether it's music, animals, or something else entirely — they explore hands-on, reflect on what excites them, and go deeper when it feels meaningful. If not, they try something new.
+
+As real passions emerge, we help connect them to future careers and build the skills to get there.`,
+      icon: "🎨",
+    },
+    {
+      id: 2,
+      title: "Understanding the Problem",
+      excerpt:
+        "Why today's education system is fundamentally misaligned with modern needs...",
+      content: `It was designed to produce workers who follow rules, memorize facts, and pass standardized tests.
+But the world has changed. And school hasn't.
+
+Instead of helping children discover who they are and what they care about, schools are often focused on conformity, competition, and credentials.
+
+Kids are being trained to compete, not contribute.
+To follow instructions, not find purpose.
+To pass tests, not solve real problems.
+
+The result?
+A generation of young people leaving school without the life skills, emotional tools, or clarity they need to thrive.`,
+      icon: "🔍",
+    },
+    {
+      id: 3,
+      title: "Root Causes of the Crisis",
+      excerpt:
+        "The deep cultural and systemic issues preventing educational transformation...",
+      content: `It runs deeper — into the culture around schools.
+So what's really holding us back?
+
+🛑 No Real Demand for Change
+Most parents accept the current system as "normal" or "safe," unaware of how much more education could be.
+
+❓Schools Want to Evolve — But Don't Know How
+Many educators want to make a shift, but lack the tools, guidance, or working models to take that first step.
+
+😟 Fear of Stepping Outside the System
+Even visionary schools hesitate. They fear backlash from parents, regulators, or society at large if they try something bold or unconventional.`,
+      icon: "⚠️",
+    },
+    {
+      id: 4,
+      title: "The Four Pillars of Our Model",
+      excerpt:
+        "How we're building classrooms designed for real life, not just exams...",
+      content: `Here's how we do it:
+1️⃣ Purposeful Academics
+We focus only on what truly matters — literacy, numeracy, and communication — taught in meaningful, practical ways.
+
+2️⃣ Essential Life Skills
+We teach the habits that help kids thrive through immersive, hands-on experiences.
+
+3️⃣ Community Problem-Solving
+Every 6 months, the class takes on a real-world issue to learn empathy and contribution.
+
+4️⃣ Passion & Identity Exploration
+We help children explore what excites them and reflect on why it matters to them.`,
+      icon: "🏛️",
+    },
   ];
 
   const handleReadMore = (id, e) => {
