@@ -15,6 +15,7 @@ import TeacherRegister from "./Pages/TeacherRegister";
 import { AuthProvider } from "./Store/auth";
 import ChangeSection from "./Components/ChangeSection";
 import OurVisionSection from './Components/OurVisionSection';
+import ModelSection from "./Components/ModelSection";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -52,6 +53,8 @@ function App() {
           <Route path="/problem" element={<ProblemSection />} />
           <Route path="/change" element={<ChangeSection />} />
           <Route path="/our-vision" element={<OurVisionSection />} />
+          <Route path="/model" element={<ModelSection />} />
+
           {/* 404 ErrorPage */}
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
