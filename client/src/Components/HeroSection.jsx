@@ -255,7 +255,7 @@ const EducationCarousel = () => {
 
   return (
     <div
-      className="relative h-96 w-full overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-xl shadow-2xl"
+      className="relative h-96 w-full overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 "
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >

@@ -7,6 +7,7 @@ import HeroSection from "../Components/HeroSection";
 import OurMission from "../Components/OurMission";
 import Review from "../Components/Review";
 import WhyEdu from "../Components/WhyEdu";
+import CoreSection from "../Components/CoreSection";
 
 const Home = () => {
   // Initialize AOS
@@ -22,6 +23,7 @@ const Home = () => {
   return (
     <>
       <HeroSection />
+      <CoreSection />
       <BlogSection />
       <WhyEdu />
       <OurMission />

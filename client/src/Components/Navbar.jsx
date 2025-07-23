@@ -462,7 +462,7 @@ const Navbar = () => {
                   <img
                     src={Logo}
                     alt="EFAS Logo"
-                    className="h-12 w-12 sm:h-16 sm:w-16 object-contain"
+                    className="h-14 w-14 sm:h-16 sm:w-16 object-contain"
                   />
                 </div>
               </Link>
