@@ -23,7 +23,7 @@ const AboutCards = () => {
     },
     {
       title: "Our Vision: Change Starts in One Classroom",
-      link: "/vision",
+      link: "/our-vision",
       icon: <FaChalkboardTeacher className="text-3xl mb-4 text-[#7d9b76]" />,
     },
     {
