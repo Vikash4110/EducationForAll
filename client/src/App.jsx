@@ -1,32 +1,33 @@
 import React, { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
-import { AuthProvider } from "./Store/auth";
-import Home from "./Pages/Home";
+import { Route, Routes } from "react-router-dom";
+import Loader from "./Components/Loader";
 import Navbar from "./Components/Navbar";
-import Loader from "./Components/Loader"; 
+import ProblemSection from "./Components/ProblemSection";
+import About from "./Pages/About";
+import Home from "./Pages/Home";
 import NotFoundPage from "./Pages/NotFoundPage";
-import TeacherLogin from "./Pages/TeacherLogin";
-import TeacherRegister from "./Pages/TeacherRegister";
-import TeacherDashboard from "./Pages/TeacherDashboard";
-import TeacherProfile from "./Pages/TeacherProfile";
 import StudentDashboard from "./Pages/StudentDashboard";
 import StudentLogin from "./Pages/StudentLogin";
-import About from "./Pages/About";
+import TeacherDashboard from "./Pages/TeacherDashboard";
+import TeacherLogin from "./Pages/TeacherLogin";
+import TeacherProfile from "./Pages/TeacherProfile";
+import TeacherRegister from "./Pages/TeacherRegister";
+import { AuthProvider } from "./Store/auth";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(false); 
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const hasLoaded = sessionStorage.getItem("hasLoaded");
 
     if (!hasLoaded) {
-      setIsLoading(true); 
+      setIsLoading(true);
       const timer = setTimeout(() => {
         setIsLoading(false);
         sessionStorage.setItem("hasLoaded", "true");
-      }, 2500); 
+      }, 2500);
 
-      return () => clearTimeout(timer); 
+      return () => clearTimeout(timer);
     }
   }, []);
 
@@ -36,7 +37,7 @@ function App() {
       <div className={`${isLoading ? "hidden" : "block"}`}>
         <Navbar />
         <Routes>
-        {/* TeacherRoutes */}
+          {/* TeacherRoutes */}
           <Route path="/" element={<Home />} />
           <Route path="/teacher-login" element={<TeacherLogin />} />
           <Route path="/teacher-register" element={<TeacherRegister />} />
@@ -46,12 +47,12 @@ function App() {
           <Route path="/student-dashboard" element={<StudentDashboard />} />
 
           <Route path="/about" element={<About />} />
+          <Route path="/problem" element={<ProblemSection />} />
           {/* 404 ErrorPage */}
-          <Route path="*" element={<NotFoundPage />} /> 
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </div>
-     </AuthProvider>
-
+    </AuthProvider>
   );
 }
 

@@ -1,106 +1,79 @@
 import { motion } from "framer-motion";
 import React from "react";
+import {
+  FaChalkboardTeacher,
+  FaGraduationCap,
+  FaLightbulb,
+  FaSchool,
+} from "react-icons/fa";
+import { IoIosArrowForward } from "react-icons/io";
 import { Link } from "react-router-dom";
 
-const CoreSection = () => {
+const AboutCards = () => {
   const cards = [
     {
       title: "The Problem: Why the Modern Education System Needs a Reset",
-      highlights: [
-        "Outdated industrial-age design",
-        "Competition over collaboration",
-        "Test-centric learning approach",
-        "Suppression of identity",
-        "Neglected life skills",
-      ],
       link: "/problem",
-      bgColor: "bg-gradient-to-br from-red-50 to-red-100",
-      borderColor: "border-red-200",
-      textColor: "text-red-800",
-      buttonColor: "bg-red-600 hover:bg-red-700",
+      icon: <FaSchool className="text-3xl mb-4 text-[#7d9b76]" />,
     },
     {
       title: "Why Change in Education Feels Impossible, But Isn't",
-      highlights: [
-        "Systemic paralysis in education",
-        "Lack of real demand for change",
-        "Educators willing but uncertain",
-        "Fear of rejection from norms",
-      ],
       link: "/change",
-      bgColor: "bg-gradient-to-br from-blue-50 to-blue-100",
-      borderColor: "border-blue-200",
-      textColor: "text-blue-800",
-      buttonColor: "bg-blue-600 hover:bg-blue-700",
+      icon: <FaLightbulb className="text-3xl mb-4 text-[#7d9b76]" />,
     },
     {
       title: "Our Vision: Change Starts in One Classroom",
-      highlights: [
-        "Ground-up transformation",
-        "The Grade 2 Lab: Build, Test, Refine",
-        "From classroom to community",
-        "A scalable revolution",
-      ],
       link: "/vision",
-      bgColor: "bg-gradient-to-br from-green-50 to-green-100",
-      borderColor: "border-green-200",
-      textColor: "text-green-800",
-      buttonColor: "bg-green-600 hover:bg-green-700",
+      icon: <FaChalkboardTeacher className="text-3xl mb-4 text-[#7d9b76]" />,
     },
     {
       title: "Our Classroom Model: 4-Pillar Foundation",
-      highlights: [
-        "Academics with purpose",
-        "Life skills that stick",
-        "Community problem-solving",
-        "Passion and identity discovery",
-      ],
       link: "/model",
-      bgColor: "bg-gradient-to-br from-purple-50 to-purple-100",
-      borderColor: "border-purple-200",
-      textColor: "text-purple-800",
-      buttonColor: "bg-purple-600 hover:bg-purple-700",
+      icon: <FaGraduationCap className="text-3xl mb-4 text-[#7d9b76]" />,
     },
   ];
 
   return (
-    <div className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <div className="py-20 px-4 sm:px-6 lg:px-8 bg-[#f6f6e9]">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
-          About Education For All Society
-        </h2>
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-4xl font-bold text-center text-[#272727] mb-16 relative"
+        >
+          <span className="relative inline-block pb-1">
+            About Education For All Society
+            <span className="absolute bottom-0 left-0 w-full h-1 bg-[#7d9b76] scale-x-75"></span>
+          </span>
+        </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {cards.map((card, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`rounded-xl shadow-lg overflow-hidden border ${card.borderColor} ${card.bgColor} hover:shadow-xl transition-shadow duration-300 h-full flex flex-col`}
+              whileHover={{ y: -5 }}
+              transition={{ duration: 0.3, delay: index * 0.1 }}
+              className="rounded-xl overflow-hidden h-full flex flex-col shadow-lg hover:shadow-xl transition-all duration-300 group"
             >
-              <div className="p-6 flex-1">
-                <h3 className={`text-xl font-bold mb-4 ${card.textColor}`}>
+              <div className="p-8 flex-1 bg-[#272727] flex flex-col items-center text-center">
+                <div className="icon-container mb-6 p-3 rounded-full bg-[#f6f6e9]/10 group-hover:bg-[#7d9b76]/20 transition-all duration-300">
+                  {card.icon}
+                </div>
+                <h3 className="text-xl font-bold mb-6 text-[#f6f6e9] leading-tight">
                   {card.title}
                 </h3>
-                <ul className="space-y-2 mb-6">
-                  {card.highlights.map((item, i) => (
-                    <li key={i} className="flex items-start">
-                      <span
-                        className={`inline-block w-2 h-2 rounded-full mt-2 mr-2 ${card.textColor}`}
-                      ></span>
-                      <span className="text-gray-700">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="px-6 pb-6">
-                <Link
-                  to={card.link}
-                  className={`inline-block px-6 py-2 rounded-lg text-white font-medium ${card.buttonColor} transition-colors duration-300 text-center w-full`}
-                >
-                  Read More
-                </Link>
+                <div className="mt-auto w-full">
+                  <Link
+                    to={card.link}
+                    className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-[#7d9b76] hover:bg-[#7d9b76]/90 text-[#272727] font-medium transition-all duration-300 w-full group-hover:shadow-md"
+                  >
+                    <span>Read More</span>
+                    <IoIosArrowForward className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+                  </Link>
+                </div>
               </div>
             </motion.div>
           ))}
@@ -110,4 +83,4 @@ const CoreSection = () => {
   );
 };
 
-export default CoreSection;
+export default AboutCards;
