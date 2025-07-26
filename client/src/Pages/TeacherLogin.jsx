@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { useAuth } from "../Store/auth";
-import { useNavigate, Link } from "react-router-dom";
-import { toast } from "sonner";
+import { faEnvelope, faKey, faLock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faLock, faKey } from "@fortawesome/free-solid-svg-icons";
-import { RotatingLines } from "react-loader-spinner";
 import { motion } from "framer-motion";
-import Img from "../assets/vecteezy_magnificent-abstract-modern-classroom-with-students-and_57453370.png"; 
+import React, { useState } from "react";
+import { RotatingLines } from "react-loader-spinner";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "sonner";
+import Img from "../assets/vecteezy_magnificent-abstract-modern-classroom-with-students-and_57453370.png";
+import { useAuth } from "../Store/auth";
 
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
@@ -43,7 +43,7 @@ const TeacherLogin = () => {
 
       storeTokenInLS(data.token);
       toast.success("Login successful! Redirecting...");
-      navigate("/teacher-dashboard"); // Immediate navigation, profile fetched via useEffect
+      navigate("/teacher-dashboard");
     } catch (error) {
       console.error("Login error:", error);
       toast.error(error.message);
@@ -136,7 +136,7 @@ const TeacherLogin = () => {
 
   return (
     <motion.div
-      className="min-h-screen bg-gray-100 flex flex-col lg:flex-row items-center justify-center px-4 lg:px-10 overflow-hidden"
+      className="min-h-screen bg-[#f6f6e9] flex flex-col lg:flex-row items-center justify-center px-4 lg:px-10 overflow-hidden"
       variants={bgVariants}
       animate="animate"
       style={{ backgroundSize: "200% 200%" }}
@@ -160,9 +160,9 @@ const TeacherLogin = () => {
         initial="hidden"
         animate="visible"
       >
-        <div className="w-full max-w-md mx-auto text-center bg-white rounded-3xl py-10 lg:py-12 px-6 lg:px-10 shadow-2xl border border-gray-100">
+        <div className="w-full max-w-md mx-auto text-center bg-[#272727] rounded-3xl py-10 lg:py-12 px-6 lg:px-10 shadow-2xl border border-[#7d9b76]/20">
           <motion.h2
-            className="text-4xl font-extrabold text-blue-600 mb-8 tracking-tight"
+            className="text-4xl font-extrabold text-[#7d9b76] mb-8 tracking-tight"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.6 }}
@@ -184,10 +184,10 @@ const TeacherLogin = () => {
                   value={credentials.email}
                   onChange={handleInputChange}
                   placeholder=""
-                  className="peer h-full w-full rounded-xl border border-gray-200 bg-transparent px-12 py-3 text-sm text-gray-700 outline-none transition-all placeholder-shown:border-gray-200 focus:border-2 focus:border-blue-600 shadow-md"
+                  className="peer h-full w-full rounded-xl border border-[#7d9b76]/30 bg-[#272727] px-12 py-3 text-sm text-[#f6f6e9] outline-none transition-all placeholder-shown:border-[#7d9b76]/30 focus:border-2 focus:border-[#7d9b76] shadow-md"
                   required
                 />
-                <label className="pointer-events-none absolute left-3 -top-4 flex items-center space-x-2 text-xs font-medium text-gray-800 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-placeholder-shown:text-gray-500 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-blue-600">
+                <label className="pointer-events-none absolute left-3 -top-4 flex items-center space-x-2 text-xs font-medium text-[#7d9b76] transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-placeholder-shown:text-[#f6f6e9]/70 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-[#7d9b76]">
                   <FontAwesomeIcon icon={faEnvelope} /> <span>Email</span>
                 </label>
               </motion.div>
@@ -204,17 +204,17 @@ const TeacherLogin = () => {
                   value={credentials.password}
                   onChange={handleInputChange}
                   placeholder=""
-                  className="peer h-full w-full rounded-xl border border-gray-200 bg-transparent px-12 py-3 text-sm text-gray-700 outline-none transition-all placeholder-shown:border-gray-200 focus:border-2 focus:border-blue-600 shadow-md"
+                  className="peer h-full w-full rounded-xl border border-[#7d9b76]/30 bg-[#272727] px-12 py-3 text-sm text-[#f6f6e9] outline-none transition-all placeholder-shown:border-[#7d9b76]/30 focus:border-2 focus:border-[#7d9b76] shadow-md"
                   required
                 />
-                <label className="pointer-events-none absolute left-3 -top-4 flex items-center space-x-2 text-xs font-medium text-gray-800 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-placeholder-shown:text-gray-500 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-blue-600">
+                <label className="pointer-events-none absolute left-3 -top-4 flex items-center space-x-2 text-xs font-medium text-[#7d9b76] transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-placeholder-shown:text-[#f6f6e9]/70 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-[#7d9b76]">
                   <FontAwesomeIcon icon={faLock} /> <span>Password</span>
                 </label>
               </motion.div>
 
               <motion.button
                 type="submit"
-                className={`py-3 px-6 rounded-full font-semibold text-white w-2/3 mx-auto flex justify-center items-center bg-gradient-to-r from-blue-600 to-purple-500 hover:from-blue-700 hover:to-purple-600 transition-all duration-300 shadow-md ${
+                className={`py-3 px-6 rounded-full font-semibold text-[#272727] w-2/3 mx-auto flex justify-center items-center bg-[#7d9b76] hover:bg-[#7d9b76]/90 transition-all duration-300 shadow-md ${
                   loading ? "opacity-50 cursor-not-allowed" : ""
                 }`}
                 whileHover={{ scale: loading ? 1 : 1.05 }}
@@ -226,7 +226,7 @@ const TeacherLogin = () => {
               >
                 {loading ? (
                   <RotatingLines
-                    strokeColor="white"
+                    strokeColor="#272727"
                     strokeWidth="5"
                     animationDuration="0.75"
                     width="24"
@@ -243,17 +243,17 @@ const TeacherLogin = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.6, duration: 0.5 }}
               >
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-[#f6f6e9]/80">
                   New Here?{" "}
                   <Link
                     to="/teacher-register"
-                    className="text-blue-600 font-semibold hover:underline transition-all"
+                    className="text-[#7d9b76] font-semibold hover:underline transition-all"
                   >
                     Sign Up
                   </Link>
                 </p>
                 <p
-                  className="text-sm text-gray-600 cursor-pointer hover:text-blue-600 transition-all"
+                  className="text-sm text-[#f6f6e9]/80 cursor-pointer hover:text-[#7d9b76] transition-all"
                   onClick={handleForgotPassword}
                 >
                   Forgot Password? Reset Here
@@ -263,7 +263,7 @@ const TeacherLogin = () => {
           ) : (
             <form onSubmit={handleResetPassword}>
               <motion.p
-                className="text-gray-600 text-center mb-6"
+                className="text-[#f6f6e9]/80 text-center mb-6"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.5 }}
@@ -282,12 +282,12 @@ const TeacherLogin = () => {
                   value={resetOtp}
                   onChange={(e) => setResetOtp(e.target.value)}
                   placeholder=""
-                  className="peer h-full w-full rounded-xl border border-gray-200 bg-transparent px-12 py-3 text-sm text-gray-700 outline-none transition-all placeholder-shown:border-gray-200 focus:border-2 focus:border-blue-600 shadow-md"
+                  className="peer h-full w-full rounded-xl border border-[#7d9b76]/30 bg-[#272727] px-12 py-3 text-sm text-[#f6f6e9] outline-none transition-all placeholder-shown:border-[#7d9b76]/30 focus:border-2 focus:border-[#7d9b76] shadow-md"
                   required
                   maxLength={6}
                   pattern="\d{6}"
                 />
-                <label className="pointer-events-none absolute left-3 -top-4 flex items-center space-x-2 text-xs font-medium text-gray-800 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-placeholder-shown:text-gray-500 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-blue-600">
+                <label className="pointer-events-none absolute left-3 -top-4 flex items-center space-x-2 text-xs font-medium text-[#7d9b76] transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-placeholder-shown:text-[#f6f6e9]/70 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-[#7d9b76]">
                   <FontAwesomeIcon icon={faKey} /> <span>OTP</span>
                 </label>
               </motion.div>
@@ -303,18 +303,18 @@ const TeacherLogin = () => {
                   value={newPassword}
                   onChange={(e) => setNewPassword(e.target.value)}
                   placeholder=""
-                  className="peer h-full w-full rounded-xl border border-gray-200 bg-transparent px-12 py-3 text-sm text-gray-700 outline-none transition-all placeholder-shown:border-gray-200 focus:border-2 focus:border-blue-600 shadow-md"
+                  className="peer h-full w-full rounded-xl border border-[#7d9b76]/30 bg-[#272727] px-12 py-3 text-sm text-[#f6f6e9] outline-none transition-all placeholder-shown:border-[#7d9b76]/30 focus:border-2 focus:border-[#7d9b76] shadow-md"
                   required
                   minLength={6}
                 />
-                <label className="pointer-events-none absolute left-3 -top-4 flex items-center space-x-2 text-xs font-medium text-gray-800 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-placeholder-shown:text-gray-500 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-blue-600">
+                <label className="pointer-events-none absolute left-3 -top-4 flex items-center space-x-2 text-xs font-medium text-[#7d9b76] transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-placeholder-shown:text-[#f6f6e9]/70 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-[#7d9b76]">
                   <FontAwesomeIcon icon={faLock} /> <span>New Password</span>
                 </label>
               </motion.div>
 
               <motion.button
                 type="submit"
-                className={`py-3 px-6 rounded-full font-semibold text-white w-2/3 mx-auto flex justify-center items-center bg-gradient-to-r from-blue-600 to-purple-500 hover:from-blue-700 hover:to-purple-600 transition-all duration-300 shadow-md ${
+                className={`py-3 px-6 rounded-full font-semibold text-[#272727] w-2/3 mx-auto flex justify-center items-center bg-[#7d9b76] hover:bg-[#7d9b76]/90 transition-all duration-300 shadow-md ${
                   loading ? "opacity-50 cursor-not-allowed" : ""
                 }`}
                 whileHover={{ scale: loading ? 1 : 1.05 }}
@@ -326,7 +326,7 @@ const TeacherLogin = () => {
               >
                 {loading ? (
                   <RotatingLines
-                    strokeColor="white"
+                    strokeColor="#272727"
                     strokeWidth="5"
                     animationDuration="0.75"
                     width="24"
@@ -338,7 +338,7 @@ const TeacherLogin = () => {
               </motion.button>
 
               <motion.p
-                className="text-sm text-gray-600 text-center mt-6 cursor-pointer hover:text-blue-600 transition-all"
+                className="text-sm text-[#f6f6e9]/80 text-center mt-6 cursor-pointer hover:text-[#7d9b76] transition-all"
                 onClick={() => setForgotPassword(false)}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
