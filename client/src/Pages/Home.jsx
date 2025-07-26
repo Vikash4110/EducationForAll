@@ -1,13 +1,9 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import React, { useEffect } from "react";
-import BlogSection from "../Components/BlogSection";
+import CoreSection from "../Components/CoreSection";
 import Footer from "../Components/Footer";
 import HeroSection from "../Components/HeroSection";
-import OurMission from "../Components/OurMission";
-import Review from "../Components/Review";
-import WhyEdu from "../Components/WhyEdu";
-import CoreSection from "../Components/CoreSection";
 
 const Home = () => {
   // Initialize AOS
@@ -24,10 +20,10 @@ const Home = () => {
     <>
       <HeroSection />
       <CoreSection />
-      <BlogSection />
+      {/* <BlogSection />
       <WhyEdu />
       <OurMission />
-      <Review />
+      <Review /> */}
       <Footer />
     </>
   );

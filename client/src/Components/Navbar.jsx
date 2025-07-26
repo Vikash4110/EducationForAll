@@ -13,8 +13,8 @@ import {
 } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+import Logo from "../assets/EFAS Transparent Logo.png";
 import { useAuth } from "../Store/auth";
-import Logo from "../assets/EFAS_Logo.webp";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

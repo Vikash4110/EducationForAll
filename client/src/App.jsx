@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Loader from "./Components/Loader";
+import ChangeSection from "./Components/ChangeSection";
+import ModelSection from "./Components/ModelSection";
 import Navbar from "./Components/Navbar";
+import OurVisionSection from "./Components/OurVisionSection";
 import ProblemSection from "./Components/ProblemSection";
 import About from "./Pages/About";
 import Home from "./Pages/Home";
@@ -13,31 +15,11 @@ import TeacherLogin from "./Pages/TeacherLogin";
 import TeacherProfile from "./Pages/TeacherProfile";
 import TeacherRegister from "./Pages/TeacherRegister";
 import { AuthProvider } from "./Store/auth";
-import ChangeSection from "./Components/ChangeSection";
-import OurVisionSection from './Components/OurVisionSection';
-import ModelSection from "./Components/ModelSection";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    const hasLoaded = sessionStorage.getItem("hasLoaded");
-
-    if (!hasLoaded) {
-      setIsLoading(true);
-      const timer = setTimeout(() => {
-        setIsLoading(false);
-        sessionStorage.setItem("hasLoaded", "true");
-      }, 2500);
-
-      return () => clearTimeout(timer);
-    }
-  }, []);
-
   return (
     <AuthProvider>
-      {isLoading && <Loader />}
-      <div className={`${isLoading ? "hidden" : "block"}`}>
+      <div>
         <Navbar />
         <Routes>
           {/* TeacherRoutes */}
