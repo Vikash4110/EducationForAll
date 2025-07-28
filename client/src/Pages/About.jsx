@@ -161,7 +161,7 @@ const About = () => {
                 Founded in 2020 by a team of educators and technologists, we
                 recognized the growing need for intuitive classroom management
                 solutions. Our platform was born from countless hours in real
-                classrooms, understanding the challenges teachers face daily.
+                classrooms  understanding the challenges teachers face daily.
               </p>
               <p className="text-lg text-[#272727]/80 mb-8">
                 Today, we serve schools across the country with our
